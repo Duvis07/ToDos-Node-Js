@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 require("colors");
 
+//se imprime el menu
 const preguntas = [
   {
     type: "list",
@@ -39,6 +40,7 @@ const preguntas = [
   },
 ];
 
+//Menu de opciones
 const inquirerMenu = async () => {
   console.clear();
   console.log("==========================".green);
@@ -134,6 +136,7 @@ const mostrarListadoChecklist = async (tareas = []) => {
     };
   });
 
+  //multiples selecciones checkbox
   const pregunta = [
     {
       type: "checkbox",

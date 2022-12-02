@@ -1,5 +1,6 @@
 require("colors");
 
+//Importaciones
 const { guardarDB, leerDB } = require("./helpers/guardarArchivo");
 const {
   inquirerMenu,
@@ -12,6 +13,7 @@ const {
 
 const Tareas = require("./models/tareas");
 
+//Funcion que ejecuta la logica de la aplicacion
 const main = async () => {
   let opt = "";
   const tareas = new Tareas();
@@ -51,7 +53,7 @@ const main = async () => {
         tareas.toggleCompletadas(ids);
         break;
 
-      case "6": // Borrar
+      case "6": // Borrar todas las tareas
         const id = await listadoTareasBorrar(tareas.listadoArr);
         if (id !== "0") {
           const ok = await confirmar("¿Está seguro?");
